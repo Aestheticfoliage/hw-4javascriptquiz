@@ -1,0 +1,19 @@
+:root{
+    background-color: green;
+}
+  
+
+body {
+    background-color: brown;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+  }
+  button {
+      color: purple;
+  }
+  button ::after{
+      color: goldenrod;
+      
+  }
