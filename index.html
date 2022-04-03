@@ -6,24 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Quiz </title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <div class="timer" id ="countdowntimer"></div>
 </head>
 <header>
-    <div id = counter>
+    <div id = "counter">
         <nav id="scorebar"> please display score
 
 </nav>
 </div>
 </header>
 <body>
-    <div class="card">
-        <h1 class="Question" name >Question</h1>
-        <ol>
-            <button class="choice 1">this is a selection for 1</button>
-            <button class="choice 2">2</button>
-            <button class="choice 3">3</button>
-            <button class="choice 4">4</button>
+
+    <div class="card" data-state=[0,1,2] >
+        <h1 id="question"></h1>
+        <ol class = "choice" id="questionChoices" data-state=[0,1,2]>
+         <div id = "choice1" data-state=[0,1,2]><span> <button class="choice1" data-state ="">
+                <p></p></button></span>
+                </div>
+           <div id = "choice2" data-state=[0,1,2]>
+        <span><button class="choice2"><p></p></button></span>
+        </div>
+           <div id="choice3" data-state=[0,1,2]><span><button class="choice3"><p></p></button></span>
+           </div>
+           <div id ="choice4" data-state=[0,1,2]><span>
+            <button class="choice4"></button></span>
+            </div>
         </ol>
     </div>
+    
+    <div id ="start" type = "button"><button id="timer"></button>
+
+    </div>
     <script src="assets/script.js"></script>
+
 </body>
 </html>
