@@ -16,43 +16,48 @@
 </div>
 </header>
 <body>
-    <div id="timer">
+   <outline id ="app">
+        <div id="timer">
 
     </div>
-<section id="startScreen" class = "" data-state="0">
+    <!-- this is the opening screen -->
+<section id="startScreen" data-state="[0]">
     <h1> Would you like to begin the quiz.</h1>
     <button class="start-Button">Start</button>
 </section>
-<section id="gameScreen" class = "isHidden" data-state="1"></section>
+<!-- this is the gameScreen -->
+<section id="gameScreen" class = "isHidden" data-state="[1]">
     <div class="card" data-state=[0,1,2] >
         <span id = "timer"></span><br>
-        <h2 id="questions">Lorem ipsum dolor.</h2>
+        <h2 id="question"></h2>
         <ol id="questionChoices">
-          <li id = "choice1">blank</li>
-          <li id = "choice2">blank</li>
-          <li id = "choice3">blank</li>
-          <li id = "choice4">blank</li>
-        <!-- </ol>
-    <div class="question"><h1 id="question"></h1></div>
-        <ol class = "choice" id="questionChoices" data-state=[0,1,2]>
-         <div id = "choice1" data-state=[0,1,2]><span> <button class="choice1" data-state ="">
-                <p></p></button></span>
-                </div>
-           <div id = "choice2" data-state=[0,1,2]>
-        <span><button class="choice2"><p></p></button></span>
-        </div>
-           <div id="choice3" data-state=[0,1,2]><span><button class="choice3"><p></p></button></span>
-           </div>
-           <div id ="choice4" data-state=[0,1,2]><span>
-            <button class="choice4"></button></span>
-            </div>
+          <li>blank</li>
+          <li>blank</li>
+          <li>blank</li>
+          <li>blank</li>
         </ol>
-    </div> -->
-    
-    <div id ="start" type = "button"><button id="timer"></button>
+    </section>
+    <!-- this is the final screen -->
+    <section id="finalScreen" class="isHidden" data-state="[2]">
+        <h1>Total Correct<span id="correctTotals"></span></h1>
+        <form id = "enterInitials">
+            <p>Please enter your initials:
+        </p>
+        <label class="inptInitialLb">
+        <input type="text" name="" id="inptInitial">
+    </label>
+        </form>
+ </section>
+   <section id = "correctTotalScreen" class="isHidden" data-state="[3]">
 
-    </div>
-    <script src="assets/script.js"></script>
+    <h1 id = "correctTotals">
+        <button>return to play again</button>
+        
+    </h1>
+   </section>
+
+   </outline>
+    <script async src="assets/script.js"></script>
 
 </body>
 </html>

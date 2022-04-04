@@ -3,17 +3,15 @@ var startButtonEl = document.querySelector("#button");
 var gameScreenEl = document.querySelector("#gameScreen");
 var gameButtonEl = document.querySelector("#button");
 var finishScreenEl = document.querySelector("#finish");
-var submitInitEl = document.querySelector("#submitInit");
+var answersEl = document.querySelector("#answers");
 var questionsEl = document.querySelector("#questions");
 var questionChoicesEl = document.querySelector("#questionChoices");
 var correctEl = document.querySelector("#correct");
 var correctTotalEl = document.querySelector("#correctTotal");
-var timerEl = document.querySelector("#timer")
-var dynamicElements=[
-   startscreenEl,
-   gameScreenEl,
-   finishScreenEl
-  ]
+var initialsEl = document.querySelector("#initials");
+var timeRemaining;
+var timerEl = document.querySelector("#timer");
+
  
 var HIDE= "isHidden";
 
@@ -97,18 +95,68 @@ questionChoices : [
     correct: 0
 
   }];
-
+// establishing the position in the array of questions
 var currentQuestion = 0;
-
+// listing the elements that will change based on state of play
 var dynamicElements=[
   startscreenel,
-  gameScreenel
- ]
+  gameScreenel,
+  finishScreenEl
+ ];
+//  preparing event listeners and starting the 'correctTotal' tally
+function init(){
+  setEventlisteners();
+  correctTotal();
+
+}
+// stores results of correct choices
+function logResult() {
+  localStorage.setItem("correctTotal",JSON.stringify(correctTotal));
+
+}
+// begins game
+function initGame(){
+  currentQuestion = 0;
+  currentGame = new userInitObj("",0);
+  populateQuestion(currentQuestion);
+  updateTimer();
+}
+// Checks answer
+function checkAnswer (currentQuestion, answerID){
+console.log("answerID:" + answerID);
+console.log("answer object:");
+console.log(questions[currentQuestion]['answer']);
+if (answerID == (questions[currentQuestion]['correct']) {
+  right(true);
+} else {
+  wrong(false);
+}
+function right(right){
+  if (right){
+    console.log("Before score:" + currentGame["score"])
+    currentGame["score"]++
+    console.log("After score:" + currentGame["score"])
+
+  } else {
+    currentGame["score"]--
+    timeRemaining = timeRemaining - 5
+  }
+}
+//grabs questions and answers as a list
+function populateQuestion() {
+  var questionObj = questions[currentQuestion];
+   answersEl.innerHTML = "";
+  questionsEl.textContent = questionObj.question;
+  for (i = 0; i < questionObj.answers.length; i++) {
+      var answer = questionObj.answers[i];
+      var li = document.createElement("li");
+      li.setAttribute("data-index",i);
+      li.textContent = answer;
+      answersEl.appendChild(li);
+  };
+}
+}
+init();
 
 
-
-//var question = document.querySelectorAll("h1")
-//var questionChoice = document.querySelectorAll("li")
-//var correctResult = ""
-//var incorrectResult = [""]
 
