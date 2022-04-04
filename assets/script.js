@@ -1,39 +1,26 @@
-var card = [0,1,2,3,4,5,6,7,8,9]
-//var card = document.createElement()
-card.entries ();
-var cardEl = document.getElementById("main");
-var secondsLeft = 1000;
+var startscreenel = document.querySelector("#startscreen")
+var startButton = document.querySelector("#start-button")
+var gameScreenel = document.querySelector("#gameScreen")
+var questionel = document.querySelector("question")
+ var dynamicElements=[
+   startscreenel,
+   gameScreenel
+  ]
+ var currentquestion=[0]
 
-function setTime() {
-  // Sets interval in variable
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left till test over";
 
-    if(secondsLeft === 0) {
-      // Stops execution of action at set interval
-      clearInterval(timerInterval);
-      // Calls function to create and append image
-      sendMessage();
-    }
-
-  }, 1000000);
-}
-  function asktoStart ();
-    createElement.card[1];
-     var question1 ={ 
-  
-    question: ("What is called variable typing in Javascript"),
-    questionChoices : {
+function init (){
+    addEventListener
+  }
+     var question =[
+  question1= ("What is called variable typing in Javascript"),
+    questionChoices , {
       choice1: ("Variable typing is used to assign a number to a variable, the same variable can be assigned to a string.", true),
       choice2: ("adding variables to what you are currently typing"),
       choice3: ("arguments that change font after you type yes"),
       choice4: ("none of the above")
-    }
-
-  }
-
-  var question2 ={
+    },
+   question2 ={
     question: ("How can you convert the string of any base to an integer in javascript"),
     questionChoices : {
       choice1: ("by tying a knot around the number and pulling it in"),
@@ -42,7 +29,7 @@ function setTime() {
       choice4:("by changing the original string array value to null")
     }
   
-  }
+  },
   var question3 ={
     question: ("select all that apply 'What is Undefined Value in Javascript'"),
     questionChoices : {
@@ -80,14 +67,14 @@ questionChoices : {
 
 }
 var question7 = {
-  question : ("What is the use of a type of Operator?"),
+  question : ("What is the use of a 'typeof' Operator?"),
   questionChoices :{
     choice1: (" 'typeOf' is an operator used to return a string description of the type of a variable", true),
     choice2: ("to explain the font of an element",false),
     choice3: (" to generally describe the scope of a property",false),
     choice4: ("to loosely reference an array",false)
 
-  }
+  },]
 }
 
 

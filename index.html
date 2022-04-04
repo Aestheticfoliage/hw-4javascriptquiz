@@ -16,9 +16,24 @@
 </div>
 </header>
 <body>
+    <div id="timer">
 
+    </div>
+<section id="startScreen" class = "" data-state="0">
+    <h1> Would you like to begin the quiz.</h1>
+    <button class="start-Button">Start</button>
+</section>
+<section id="gameScreen" class = "isHidden" data-state="1"></section>
     <div class="card" data-state=[0,1,2] >
-        <h1 id="question"></h1>
+        <span id = "timer"></span><br>
+        <h2 id="questions">Lorem ipsum dolor.</h2>
+        <ol id="questionChoices">
+          <li id = "choice1">blank</li>
+          <li id = "choice2">blank</li>
+          <li id = "choice3">blank</li>
+          <li id = "choice4">blank</li>
+        <!-- </ol>
+    <div class="question"><h1 id="question"></h1></div>
         <ol class = "choice" id="questionChoices" data-state=[0,1,2]>
          <div id = "choice1" data-state=[0,1,2]><span> <button class="choice1" data-state ="">
                 <p></p></button></span>
@@ -32,7 +47,7 @@
             <button class="choice4"></button></span>
             </div>
         </ol>
-    </div>
+    </div> -->
     
     <div id ="start" type = "button"><button id="timer"></button>
 
