@@ -1,3 +1,4 @@
+@import url(https://fonts.google.com/share?selection.family=Hurricane%7CLato:wght@300%7CPalette%20Mosaic%7CRed%20Hat%20Mono);
 :root {
         --main-font-color: #1a1a1a;
         --main-bg-color: white;
@@ -6,11 +7,11 @@
         --light-gray: #ccc;
         --light-black: #282a39;
         --container-width: 768px;
-        --font-body-stack: Raleway, Charcoal, sans-serif;
-        --font-heading-stack: "PT Serif", sans-serif;
+        --font-body-stack:'Lato', sans-serif;
+        --font-heading-stack: 'Red Hat Mono', monospace;
       }
 
-}
+
 * {
     padding: 0;
     margin: 0;

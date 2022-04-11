@@ -72,26 +72,33 @@ const App = () => {
     [0, 1, 2]
   )
   const quiz = new Quiz([q1,q2,q3,q4,q5,q6,q7]);
+  // brings in the question function to establish the properties to include question, choices and answerkey
 
   function Question(question, choices, answerKey){
     this.question = question;
     this.choices = choices;
     this.answerKey = answerKey;
 }
+// if quesskey is equal to the answerkey the question value will be listed as correct
 Question.prototype.isCorrect = function (guessKey){
     return guessKey === this.answerKey;
 }
+// sets the function quiz to include the parameters that will be attributed to questions setting the value of score and current index at 0
 function Quiz(questions){
   this.questions = questions;
   this.score = 0;
   this.currentIndex = 0;
 }
+// this function "getcurrentQuestion"is a child of the Quiz and returns the value of question relative to its position in the current index
 Quiz.prototype.getCurrentQuestion = function(){
   return this.questions[this.currentIndex];
 }
+// This introduces the "hasEnded" fuction and sets its value when the current index has stops being able to add another variable to the string
 Quiz.prototype.hasEnded = function(){
   this.currentIndex++;
 }
+// the quess function attributes userguess to the value of current question when this is a question in a position relative to currentIndex when currentQuestion
+// "isCorrect" the score progresses 1 and "nextIndex" moves it forward in position 
 Quiz.prototype.quess = function(userGuess) {
   const currentQuestion = this.questions[this.currentIndex];
   if (currentQuestion.isCorrect(userGuess)) {
@@ -103,6 +110,8 @@ Quiz.prototype.reset = function(){
   this.score = 0;
   this.currentIndex = 0;
 }
+// this function sets the event listener to the next button and takes the value of the radio elem checkbox
+
 
   const listeners = _ => {
     nextButtonEl.addEventListener("click", function(){
@@ -114,6 +123,7 @@ Quiz.prototype.reset = function(){
         renderAll();
       }
     })
+    // this resets the quiz when the restart buttonis clicked
     restartButtonEl.addEventListener("click", function(){
       quiz.reset();
       renderAll();
