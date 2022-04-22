@@ -1,15 +1,16 @@
 import Quiz from "./quiz.js";
 import Question from "./question.js";
 
-const App = () => {
+const App = (() => {
   // this section is caching the following elements
   const quizEl = document.querySelector(".jquiz");
   const quizQuestionEl = document.querySelector(".jquiz__question");
   const trackerEl = document.querySelector(".jquiz__tracker");
   const taglineEl = document.querySelector(".jquiz__tagline");
   const choicesEl = document.querySelector(".jquiz__choices");
-  const progressInnerEl = document.querySelector(".next");
-  const nextButtonEl = document.querySelector(".restart");
+  const progressInnerEl = document.querySelector(".progress__inner");
+  const nextButtonEl = document.querySelector(".next");
+  const restartButtonEl = document.querySelector(".restart");
 
   const q1 = new Question(
     "What is called variable typing in Javascript",
@@ -135,6 +136,7 @@ const App = () => {
   };
   const renderQuestion = (_) => {
     const question = quiz.getCurrentQuestion().question;
+    console.log(question);
     setValue(quizQuestionEl, question);
   };
   const renderChoicesElements = (_) => {
@@ -203,7 +205,7 @@ const App = () => {
     renderAll: renderAll,
     listeners: listeners,
   };
-};
+})();
 
 App.renderAll();
 App.listeners();
